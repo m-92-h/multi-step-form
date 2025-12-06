@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,500;1,500&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
+:root {
+    --Marine-blue: hsl(213, 96%, 18%);
+    --Purplish-blue: hsl(243, 100%, 62%);
+    --Pastel-blue: hsl(228, 100%, 84%);
+    --Light-blue: hsl(206, 94%, 87%);
+    --Strawberry-red: hsl(354, 84%, 57%);
+    --Cool-gray: hsl(231, 11%, 63%);
+    --Light-gray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(218, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 100%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--Magnolia);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* style main card */
+.container {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    background-color: var(--White);
+    max-width: 50rem;
+    width: 100%;
+    min-height: 85vh;
+    border-radius: 10px;
+    padding: 0 30px !important;
+}
+
+/* style sidebar for steps */
+.sidebar {
+    background-image: url('./assets/images/bg-sidebar-desktop.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 85vh;
+}
+.step-list {
+    list-style: none;
+}
+.step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.step-number {
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--Pastel-blue);
+    border-radius: 50%;
+    color: var(--White);
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    transition: all 0.2s;
+    background-color: transparent;
+}
+.step-number:hover {
+    background-color: var(--Pastel-blue);
+    color: var(--Marine-blue);
+}
+.step-text {
+    color: var(--White);
+    text-transform: uppercase;
+}
+.step-label {
+    display: block;
+    font-size: 14px;
+    color: var(--Pastel-blue);
+}
+.step-title {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* style sheard all steps for show or visibile */
+.step-content {
+    display: none;
+}
+.active-step {
+    display: block;
+}
+
+/* style step 1 */
+#step-1 > .step-title,
+#step-2 > .step-title,
+#step-3 > .step-title,
+#step-4 > .step-title {
+    color: var(--Marine-blue);
+    font-size: 35px;
+}
+#step-1 > .step-description,
+#step-2 > .step-description,
+#step-3 > .step-description,
+#step-4 > .step-description {
+    color: var(--Cool-gray);
+    font-size: 15px;
+}
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.label {
+    margin-bottom: 2px;
+}
+
+.form-control:hover,
+.form-control:focus {
+    box-shadow: none;
+    border-color: var(--Marine-blue);
+}
+input::placeholder {
+    color: var(--Light-gray);
+    opacity: 1;
+    font-size: 15px;
+}
+.error-message {
+    visibility: hidden;
+    font-size: 12px;
+    color: var(--Strawberry-red);
+}
+.next-step-btn {
+    background-color: var(--Purplish-blue);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: var(--White);
+}
+.next-step-btn:hover {
+    background-color: var(--Marine-blue);
+}
+
+/* bootstrap إلغاء أيقونة الخطأ التي يضيفها */
+.form-control.is-invalid,
+.form-control.is-valid {
+    background-image: none !important;
+}
+
+/* image checkmark of form input */
+.icon-checkmark {
+    border-left: none;
+    background-color: var(--Magnolia);
+    border: 1px solid #24860c;
+    border-radius: 6px;
+    height: 2.5em;
+}
+
+/* style step 2 */
+.card {
+    width: 9rem;
+}
+.card:hover {
+    border-color: var(--Marine-blue);
+    cursor: pointer;
+}
+.image-step2-custom {
+    width: 40px;
+    height: 40px;
+    margin: 20px 0 25px 0;
+}
+.card-body {
+    margin: 0;
+    padding: 0;
+}
+.card-title {
+    font-size: 18px;
+}
+.card-subtitle {
+    font-size: 14px;
+}
+.card-body > p {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--Marine-blue);
+}
+.selected-card {
+    border-color: var(--Marine-blue);
+    background-color: var(--Magnolia);
+}
+.add-ons-card.selected-addon-card {
+    border: 1px solid var(--Purplish-blue);
+    background-color: var(--Alabaster);
+}
+.button-switch {
+    width: 97%;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: var(--Magnolia);
+}
+/* تغيير لون الخلفية عندما يكون الزر غير مُحدد (Off) */
+.form-check-input:not(:checked) {
+    background-color: var(--Marine-blue);
+    border-color: var(--Marine-blue);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e"); /* كرة بيضاء */
+}
+
+/* تغيير لون الخلفية عندما يكون الزر مُحددًا (On) */
+.form-check-input:checked {
+    background-color: var(--Marine-blue);
+    border-color: var(--Marine-blue);
+}
+
+.form-check-input:focus {
+    box-shadow: none; 
+}
+
+.button-move {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+.button-back {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--Cool-gray);
+    font-size: 16px;
+}
+.button-back:hover {
+    color: var(--Marine-blue);
+}
+
+/* style step 3 */
+.check-box {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    border: 1px solid var(--Cool-gray);
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+.check-box:hover {
+    border-color: var(--Marine-blue);
+}
+.first-child,
+.last-child {
+    display: flex;
+    align-items: center;
+    width: 20%;
+}
+.first-child {
+    padding-left: 10px;
+}
+
+/* تغيير لون خلفية الاب عند تفعيل جيكبوكس */
+.check-box:has(input[type="checkbox"]:checked) {
+    background-color: var(--Light-blue);
+    border-color: var(--Marine-blue);
+}
+/* target step 3 input checkbox */
+.check-box .first-child input[type="checkbox"] {
+    accent-color: blue; /* هذه الخاصية تغير لون الخلفية (والعلامة) عند التحديد */
+}
+
+.last-child {
+    color: var(--Purplish-blue);
+}
+.check-content {
+    text-align: start;
+    width: 80%;
+}
+.check-content > h6 {
+    font-size: 18px;
+    color: var(--Marine-blue);
+    margin: 0;
+}
+.check-content > span {
+    font-size: 14px;
+    color: var(--Cool-gray);
+}
+
+/* style step 4 */
+.sum-content {
+    background-color: var(--Alabaster);
+    border-radius: 5px;
+}
+.content-header,
+.content-footer,
+.sum-total {
+    display: flex;
+    justify-content: space-between;
+    line-height: 0;
+}
+.Arcade {
+    width: 85%;
+}
+.Arcade > h6 {
+    font-size: 18px;
+}
+.Arcade > h6,
+.price {
+    color: var(--Marine-blue);
+}
+.Arcade > a {
+    font-size: 16px;
+    color: var(--Cool-gray);
+}
+.Arcade > a:hover {
+    color: var(--Purplish-blue);
+}
+.price {
+    width: 15%;
+    margin-right: 10px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+.content-footer > h6,
+.sum-total > h6 {
+    font-size: 16px;
+    color: var(--Cool-gray);
+}
+.sum-total > h5 {
+    color: var(--Purplish-blue);
+    margin-right: 10px;
+    font-size: 18px;
+}
+.Confirm {
+    background-color: var(--Purplish-blue);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 18px;
+    color: var(--White);
+}
+.Confirm:hover {
+    background-color: var(--Pastel-blue);
+}
+
+/* style step 5 */
+.success-content {
+    margin-top: 10%;
+}
+.message-success {
+    color: var(--Cool-gray);
+    font-size: 14px;
+    padding: 0 1em;
+}

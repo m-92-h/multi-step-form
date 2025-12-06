@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Multi-step form</title>
+    </head>
+    <body>
+        <!-- main card -->
+        <main class="container">
+            <!-- sidebar for steps and all content them-->
+            <div class="row my-3">
+                <!-- Sidebar start -->
+                <div class="col-4 sidebar">
+                    <ul class="step-list mt-5">
+                        <li class="step active">
+                            <button class="step-number">1</button>
+                            <div class="step-text">
+                                <span class="step-label">STEP 1</span>
+                                <span class="step-title">YOUR INFO</span>
+                            </div>
+                        </li>
+                        <li class="step">
+                            <button class="step-number">2</button>
+                            <div class="step-text">
+                                <span class="step-label">STEP 2</span>
+                                <span class="step-title">SELECT PLAN</span>
+                            </div>
+                        </li>
+                        <li class="step">
+                            <button class="step-number">3</button>
+                            <div class="step-text">
+                                <span class="step-label">STEP 3</span>
+                                <span class="step-title">ADD-ONS</span>
+                            </div>
+                        </li>
+                        <li class="step">
+                            <button class="step-number">4</button>
+                            <div class="step-text">
+                                <span class="step-label">STEP 4</span>
+                                <span class="step-title">SUMMARY</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Sidebar end -->
+
+                <!-- content step-1 start -->
+                <div class="col-8 p-4 step-content active-step">
+                    <form class="row">
+                        <div id="step-1" class="col-12 mb-3">
+                            <h2 class="step-title">Personal info</h2>
+                            <p class="step-description">Please provide your name, email address, and phone number.</p>
+                        </div>
+
+                        <div class="col-12 pe-5">
+                            <div class="label-row">
+                                <label for="name" class="label">Name</label>
+                                <span class="error-message" id="name-error">This field is required</span>
+                            </div>
+                            <div class="input-group" id="inputName">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="e.g. Stephen King" />
+                                <svg class="icon-checkmark d-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="rgb(21, 143, 47)" stroke-width="3" d="M4 12L10 18L20 6" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="col-12 my-3 pe-5">
+                            <div class="label-row">
+                                <label for="email" class="label">Email Address</label>
+                                <span class="error-message" id="email-error">This field is required</span>
+                            </div>
+                            <div class="input-group" id="inputEmail">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="e.g. stephenking@lorem.com" />
+                                <svg class="icon-checkmark d-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="rgb(21, 143, 47)" stroke-width="3" d="M4 12L10 18L20 6" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pe-5">
+                            <div class="label-row">
+                                <label for="tel" class="label">Phone Number</label>
+                                <span class="error-message" id="tel-error">This field is required</span>
+                            </div>
+                            <div class="input-group" id="inputTel">
+                                <input type="tel" class="form-control" id="tel" name="tel" placeholder="e.g. +1 234 567 890" />
+                                <svg class="icon-checkmark d-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="rgb(21, 143, 47)" stroke-width="3" d="M4 12L10 18L20 6" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="mt-4"></div>
+                        <div class="col-12 text-end mt-4 pe-5">
+                            <input type="submit" class="next-step-btn" value="Next Step" />
+                        </div>
+                    </form>
+                </div>
+                <!-- content step-1 end -->
+
+                <!-- content step-2 start -->
+                <div class="col-8 p-4 step-content">
+                    <div class="row">
+                        <div id="step-2" class="col-12 mb-3">
+                            <h2 class="step-title">Select your plan</h2>
+                            <p class="step-description">You have the option of monthly or yearly billing.</p>
+                        </div>
+
+                        <div class="col-12 d-flex gap-2">
+                            <div class="card ps-3 clickCard">
+                                <img src="./assets/images/icon-arcade.svg" class="card-img-top image-step2-custom" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Arcade</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary" id="priceArcadeYearly">$9/mo</h6>
+                                    <p class="monthlyDiscount d-none">2 months free</p>
+                                </div>
+                            </div>
+                            <div class="card ps-3 clickCard">
+                                <img src="./assets/images/icon-advanced.svg" class="card-img-top image-step2-custom" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Advanced</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary" id="priceAdvancedYearly">$12/mo</h6>
+                                    <p class="monthlyDiscount d-none">2 months free</p>
+                                </div>
+                            </div>
+                            <div class="card ps-3 clickCard">
+                                <img src="./assets/images/icon-pro.svg" class="card-img-top image-step2-custom" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Pro</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary" id="priceProYearly">$15/mo</h6>
+                                    <p class="monthlyDiscount d-none">2 months free</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 my-3">
+                            <div class="button-switch py-1">
+                                <label class="form-check-label me-2" for="">Monthly</label>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="switchCheck" />
+                                </div>
+                                <label class="form-check-label" for="">Yearly</label>
+                            </div>
+                        </div>
+
+                        <div class="mt-4"></div>
+                        <div class="col-12 button-move mt-5 pe-5" id="buttonCustom">
+                            <button class="button-back">Go Back</button>
+                            <input type="submit" class="next-step-btn" value="Next Step" />
+                        </div>
+                    </div>
+                </div>
+                <!-- content step-2 end -->
+
+                <!-- content step-3 start -->
+                <div class="col-8 p-4 step-content">
+                    <div class="row">
+                        <div id="step-3" class="col-12 mb-3">
+                            <h2 class="step-title">Pick add-ons</h2>
+                            <p class="step-description">Add-ons help enhance your gaming experience.</p>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="check-box add-ons-card">
+                                <div class="first-child">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="check-content">
+                                    <h6>Online service</h6>
+                                    <span>Access to multiplayer games</span>
+                                </div>
+                                <div class="last-child" id="priceService">+$1/mo</div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 my-3">
+                            <div class="check-box add-ons-card">
+                                <div class="first-child">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="check-content">
+                                    <h6>Larger storage</h6>
+                                    <span>Extra 1TB of cloud save</span>
+                                </div>
+                                <div class="last-child" id="priceStorage">+$2/mo</div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mb-4">
+                            <div class="check-box add-ons-card">
+                                <div class="first-child">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="check-content">
+                                    <h6>Customizable Profile</h6>
+                                    <span>Custom theme on your profile</span>
+                                </div>
+                                <div class="last-child" id="priceProfile">+$2/mo</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4"></div>
+                        <div class="col-12 button-move mt-4 pe-5">
+                            <button class="button-back">Go Back</button>
+                            <input type="submit" class="next-step-btn" value="Next Step" />
+                        </div>
+                    </div>
+                </div>
+                <!-- content step-3 end -->
+
+                <!-- content step-4 start -->
+                <div class="col-8 step-content p-4 px-5">
+                    <div class="row">
+                        <div id="step-4" class="col-12 mb-3">
+                            <h2 class="step-title">Finishing up</h2>
+                            <p class="step-description">Double-check everything looks OK before confirming.</p>
+                        </div>
+
+                        <div class="col-12 p-3 sum-content">
+                            <div class="content-header">
+                                <div class="Arcade">
+                                    <h6 id="titleSpet4">Arcade (Monthly)</h6>
+                                    <a href="#">Change</a>
+                                </div>
+                                <div class="price fw-bolder" id="priceMode">$90/yr</div>
+                            </div>
+                            <hr />
+                            <div class="content-footer">
+                                <h6></h6>
+                                <div class="price"></div>
+                            </div>
+                            <div class="content-footer">
+                                <h6></h6>
+                                <div class="price"></div>
+                            </div>
+                            <div class="content-footer">
+                                <h6></h6>
+                                <div class="price"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <div class="sum-total mx-1">
+                                <h6 id="totalPrice">Total (per month)</h6>
+                                <h5></h5>
+                            </div>
+                        </div>
+
+                        <div class="mt-4"></div>
+                        <div class="col-12 button-move mt-5">
+                            <button class="button-back">Go Back</button>
+                            <input type="submit" class="Confirm next-step-btn" value="Confirm" />
+                        </div>
+                    </div>
+                </div>
+                <!-- content step-4 end -->
+
+                <!-- content step-5 start -->
+                <div class="col-8 p-4 px-4 step-content text-center">
+                    <div class="row success-content">
+                        <div class="col">
+                            <img class="my-3" src="./assets/images/icon-thank-you.svg" alt="" />
+                            <h4>Thank you!</h4>
+                            <p class="message-success">
+                                Thanks for confirming your subscription! We hope you have <br />
+                                fun using our platform. If you ever need support, please feel <br />
+                                free to email us at support@loremgaming.com.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- content step-5 end -->
+            </div>
+        </main>
+
+        <script src="./script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>
