@@ -41,7 +41,7 @@ body {
 
 /* style sidebar for steps */
 .sidebar {
-    background-image: url('./assets/images/bg-sidebar-desktop.svg');
+    background-image: url('./assets/bg-sidebar-desktop.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -205,14 +205,13 @@ input::placeholder {
     border-radius: 5px;
     background-color: var(--Magnolia);
 }
-/* تغيير لون الخلفية عندما يكون الزر غير مُحدد (Off) */
+
 .form-check-input:not(:checked) {
     background-color: var(--Marine-blue);
     border-color: var(--Marine-blue);
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e"); /* كرة بيضاء */
 }
 
-/* تغيير لون الخلفية عندما يكون الزر مُحددًا (On) */
 .form-check-input:checked {
     background-color: var(--Marine-blue);
     border-color: var(--Marine-blue);
@@ -262,14 +261,13 @@ input::placeholder {
     padding-left: 10px;
 }
 
-/* تغيير لون خلفية الاب عند تفعيل جيكبوكس */
 .check-box:has(input[type="checkbox"]:checked) {
     background-color: var(--Light-blue);
     border-color: var(--Marine-blue);
 }
-/* target step 3 input checkbox */
+
 .check-box .first-child input[type="checkbox"] {
-    accent-color: blue; /* هذه الخاصية تغير لون الخلفية (والعلامة) عند التحديد */
+    accent-color: blue;
 }
 
 .last-child {
