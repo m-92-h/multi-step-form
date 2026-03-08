@@ -73,7 +73,7 @@ npm run build
 multi-step-form/
 ├── public/          # preview
 ├── src/
-├── assets/          # SVGs, favicon, and background images
+├── ├── assets/          # SVGs, favicon, and background images
 │   ├── main.ts
 │   └── style.css
 ├── .gitignore
